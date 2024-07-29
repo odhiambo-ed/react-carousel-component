@@ -1,13 +1,13 @@
 import './App.css'
-import FormComponent from './components/FormComponent'
+import SliderComponent from "./components/SliderComponent";
 
 function App() {
 
   return (
     <>
-      <FormComponent />
+      <SliderComponent />
     </>
-  )
+  );
 }
 
 export default App

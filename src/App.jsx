@@ -1,10 +1,11 @@
 import './App.css'
+import FormComponent from './components/FormComponent'
 
 function App() {
 
   return (
     <>
-      <h1>Jesus in You I trust</h1>
+      <FormComponent />
     </>
   )
 }

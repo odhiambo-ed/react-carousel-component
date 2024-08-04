@@ -26,3 +26,19 @@
 .right-arrow {
     right: 1rem;
 }
+
+.indicator-container {
+    display: flex;
+    gap: 5px;
+    position: absolute;
+    bottom: 1rem;
+}
+
+.indicators {
+    width: 13px;
+    height: 13px;
+    border: none;
+    color: #AAB7B8;
+    border-radius: 50%;
+    cursor: pointer;
+}

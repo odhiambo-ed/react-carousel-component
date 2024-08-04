@@ -42,6 +42,13 @@ function SliderComponent({ url, page = 2, limit = 10 }) {
         <p>No images found</p>
       )}
       <IoIosArrowDroprightCircle className="arrow right" />
+      <span className="indicator-container">
+        {images && images.length > 0 ? (
+        images.map((_, index) => (
+          <button key={index} className="indicators"></button>
+        ))
+      ) : null}
+      </span>
     </div>
   );
 }

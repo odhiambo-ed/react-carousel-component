@@ -43,7 +43,10 @@ function SliderComponent({ url, page = 2, limit = 10 }) {
     <div className="hero">
       {error && <p>{error}</p>}
       {/* Render images or a message if there are no images */}
-      <IoIosArrowDropleftCircle onClick={handlePrevious} className="arrow left-arrow" />
+      <IoIosArrowDropleftCircle
+        onClick={handlePrevious}
+        className="arrow left-arrow"
+      />
       {images.length > 0 ? (
         images.map((image, index) => (
           <img
@@ -56,14 +59,20 @@ function SliderComponent({ url, page = 2, limit = 10 }) {
       ) : (
         <p>No images found</p>
       )}
-      <IoIosArrowDroprightCircle onClick={handleNext} className="arrow right-arrow" />
+      <IoIosArrowDroprightCircle
+        onClick={handleNext}
+        className="arrow right-arrow"
+      />
       <span className="indicator-container">
         {images && images.length > 0
           ? images.map((_, index) => (
               <button
                 key={index}
+                onClick={() => setCurrentImage(index)}
                 className={
-                  currentImage == index ? `indicators` : `inactive__indicators`
+                  currentImage == index
+                    ? `indicators`
+                    : `indicators inactive__indicators`
                 }
               ></button>
             ))

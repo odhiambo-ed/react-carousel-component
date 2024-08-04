@@ -33,7 +33,7 @@ function SliderComponent({ url, page = 2, limit = 10 }) {
     <div className="hero">
       {error && <p>{error}</p>}
       {/* Render images or a message if there are no images */}
-      <IoIosArrowDropleftCircle className="arrow left" />
+      <IoIosArrowDropleftCircle className="arrow left-arrow" />
       {images.length > 0 ? (
         images.map((image) => (
           <img key={image.id} src={image.download_url} alt={image.author} />
@@ -41,7 +41,7 @@ function SliderComponent({ url, page = 2, limit = 10 }) {
       ) : (
         <p>No images found</p>
       )}
-      <IoIosArrowDroprightCircle className="arrow right" />
+      <IoIosArrowDroprightCircle className="arrow right-arrow" />
       <span className="indicator-container">
         {images && images.length > 0 ? (
         images.map((_, index) => (

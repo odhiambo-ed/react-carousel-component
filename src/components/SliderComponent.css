@@ -7,5 +7,21 @@
 }
 
 .hero img {
-    width: 90vw;
+    width: 100%;
+    height: 100%;
+}
+
+.arrow {
+    height: 2rem;
+    width: 2rem;
+    color: #AAB7B8;
+    filter: drop-shadow(0px 0px 5px #555);
+}
+
+.left {
+    left: 1rem;
+}
+
+.right {
+    right: 1rem;
 }

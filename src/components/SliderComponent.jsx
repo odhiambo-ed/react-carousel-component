@@ -1,5 +1,10 @@
 import { useEffect, useState } from "react";
-import './SliderComponent.css'
+import PropTypes from "prop-types";
+import "./SliderComponent.css";
+import {
+  IoIosArrowDropleftCircle,
+  IoIosArrowDroprightCircle,
+} from "react-icons/io";
 
 function SliderComponent({ url, page = 2, limit = 10 }) {
   const [images, setImages] = useState([]);
@@ -28,6 +33,7 @@ function SliderComponent({ url, page = 2, limit = 10 }) {
     <div className="hero">
       {error && <p>{error}</p>}
       {/* Render images or a message if there are no images */}
+      <IoIosArrowDropleftCircle />
       {images.length > 0 ? (
         images.map((image) => (
           <img key={image.id} src={image.download_url} alt={image.author} />
@@ -35,8 +41,15 @@ function SliderComponent({ url, page = 2, limit = 10 }) {
       ) : (
         <p>No images found</p>
       )}
+      <IoIosArrowDroprightCircle />
     </div>
   );
 }
+
+SliderComponent.propTypes = {
+  url: PropTypes.string.isRequired,
+  page: PropTypes.number,
+  limit: PropTypes.number,
+};
 
 export default SliderComponent;

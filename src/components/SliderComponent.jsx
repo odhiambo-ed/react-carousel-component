@@ -33,6 +33,10 @@ function SliderComponent({ url, page = 2, limit = 10 }) {
   function handlePrevious() {
     setCurrentImage(currentImage == 0 ? currentImage.length - 1 : currentImage - 1)
   }
+
+  function handleNext() {
+    setCurrentImage(currentImage == currentImage.length - 1 ? currentImage == 0 : currentImage + 1)
+  }
   
 
   return (

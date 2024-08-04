@@ -9,6 +9,7 @@ import {
 function SliderComponent({ url, page = 2, limit = 10 }) {
   const [images, setImages] = useState([]);
   const [error, setError] = useState(null);
+  const [currentImage, setCurrentImage] = useState(0)
 
   async function fetchImages(getUrl) {
     try {
@@ -35,8 +36,10 @@ function SliderComponent({ url, page = 2, limit = 10 }) {
       {/* Render images or a message if there are no images */}
       <IoIosArrowDropleftCircle className="arrow left-arrow" />
       {images.length > 0 ? (
-        images.map((image) => (
-          <img key={image.id} src={image.download_url} alt={image.author} />
+        images.map((image, index) => (
+          <img key={image.id} src={image.download_url} alt={image.author} className={ 
+            currentImage == index ? `current__image` : `hide__me`
+          } />
         ))
       ) : (
         <p>No images found</p>

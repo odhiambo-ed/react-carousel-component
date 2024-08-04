@@ -27,7 +27,7 @@ function SliderComponent({ url, page = 2, limit = 10 }) {
 
   useEffect(() => {
     fetchImages(url);
-  }, [url, page, limit]);
+  }, [url]);
 
   return (
     <div className="hero">

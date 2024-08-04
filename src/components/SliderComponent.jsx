@@ -30,27 +30,40 @@ function SliderComponent({ url, page = 2, limit = 10 }) {
     fetchImages(url);
   }, [url]);
 
+  function handlePrevious() {
+    setCurrentImage(currentImage == 0 ? currentImage.length - 1 : currentImage - 1)
+  }
+  
+
   return (
     <div className="hero">
       {error && <p>{error}</p>}
       {/* Render images or a message if there are no images */}
-      <IoIosArrowDropleftCircle className="arrow left-arrow" />
+      <IoIosArrowDropleftCircle onClick={handlePrevious} className="arrow left-arrow" />
       {images.length > 0 ? (
         images.map((image, index) => (
-          <img key={image.id} src={image.download_url} alt={image.author} className={ 
-            currentImage == index ? `current__image` : `hide__me`
-          } />
+          <img
+            key={image.id}
+            src={image.download_url}
+            alt={image.author}
+            className={currentImage == index ? `current__image` : `hide__me`}
+          />
         ))
       ) : (
         <p>No images found</p>
       )}
-      <IoIosArrowDroprightCircle className="arrow right-arrow" />
+      <IoIosArrowDroprightCircle onClick={handleNext} className="arrow right-arrow" />
       <span className="indicator-container">
-        {images && images.length > 0 ? (
-        images.map((_, index) => (
-          <button key={index} className="indicators"></button>
-        ))
-      ) : null}
+        {images && images.length > 0
+          ? images.map((_, index) => (
+              <button
+                key={index}
+                className={
+                  currentImage == index ? `indicators` : `inactive__indicators`
+                }
+              ></button>
+            ))
+          : null}
       </span>
     </div>
   );

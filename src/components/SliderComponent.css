@@ -6,9 +6,13 @@
     height: 80vh;
 }
 
-.hero img {
+.current__image {
     width: 100%;
     height: 100%;
+}
+
+.hide__me {
+    display: none;
 }
 
 .arrow {

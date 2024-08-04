@@ -16,6 +16,7 @@
     width: 2rem;
     color: #AAB7B8;
     filter: drop-shadow(0px 0px 5px #555);
+    position: absolute;
 }
 
 .left-arrow {

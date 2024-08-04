@@ -46,3 +46,12 @@
     border-radius: 50%;
     cursor: pointer;
 }
+
+.inactive__indicators {
+    width: 13px;
+    height: 13px;
+    border: none;
+    color: #717D7E;
+    border-radius: 50%;
+    cursor: pointer;
+}
